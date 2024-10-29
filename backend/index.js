@@ -32,6 +32,17 @@ app.get("/generate-qrcode", async (req, res) => {
   }
 });
 
+app.post("/api/mpesa-payment", (req, res) => {
+  const { totalAmount, categories } = req.body;
+
+  // Log the request for debugging
+  console.log("Received payment request:", totalAmount, categories);
+
+  // Handle payment logic here, like initiating M-Pesa STK push
+  // For now, send a mock response
+  res.json({ message: "Payment request received successfully!" });
+});
+
 const PORT = process.env.PORT || 5000;
 
 mongoose
