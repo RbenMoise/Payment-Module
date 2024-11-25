@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <p>Welcome home</p>
-      <QrCodeGenerator></QrCodeGenerator>
+      {/* <QrCodeGenerator></QrCodeGenerator> */}
       <OfferingForm></OfferingForm>
     </div>
   );
