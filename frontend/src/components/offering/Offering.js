@@ -14,21 +14,6 @@ const OfferingForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [qrCode, setQrCode] = useState("");
-
-  // useEffect(() => {
-  //   fetchQRCode();
-  // }, []);
-
-  // const fetchQRCode = async () => {
-  //   try {
-  //     const response = await fetch("/generate-qrcode");
-  //     const data = await response.json();
-  //     setQrCode(data.qrCodeDataUrl);
-  //   } catch (err) {
-  //     setError("Failed to generate QR code");
-  //   }
-  // };
 
   const validatePhone = (phone) => {
     const phoneRegex =
@@ -55,7 +40,7 @@ const OfferingForm = () => {
     }
 
     try {
-      const response = await fetch("/stk/push", {
+      const response = await fetch("mpesa/stk/push", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,13 +75,6 @@ const OfferingForm = () => {
     <div className="container">
       <div className="card">
         <h2 className="title">Church Offering</h2>
-
-        {qrCode && (
-          <div className="qrCode">
-            <img src={qrCode} alt="Payment QR Code" className="qrCodeImage" />
-            <p>Scan to make payment</p>
-          </div>
-        )}
 
         <form onSubmit={handleSubmit}>
           <div className="formGroup">
