@@ -16,19 +16,19 @@ const OfferingForm = () => {
   const [success, setSuccess] = useState("");
   const [qrCode, setQrCode] = useState("");
 
-  useEffect(() => {
-    fetchQRCode();
-  }, []);
+  // useEffect(() => {
+  //   fetchQRCode();
+  // }, []);
 
-  const fetchQRCode = async () => {
-    try {
-      const response = await fetch("/generate-qrcode");
-      const data = await response.json();
-      setQrCode(data.qrCodeDataUrl);
-    } catch (err) {
-      setError("Failed to generate QR code");
-    }
-  };
+  // const fetchQRCode = async () => {
+  //   try {
+  //     const response = await fetch("/generate-qrcode");
+  //     const data = await response.json();
+  //     setQrCode(data.qrCodeDataUrl);
+  //   } catch (err) {
+  //     setError("Failed to generate QR code");
+  //   }
+  // };
 
   const validatePhone = (phone) => {
     const phoneRegex =
