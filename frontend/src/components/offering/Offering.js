@@ -1,89 +1,10 @@
 import React, { useState, useEffect } from "react";
+import "./offering.css";
 
 const PaymentCategories = {
   TITHES: "tithes",
   DONATIONS: "donations",
   PLEDGES: "pledges",
-};
-
-const styles = {
-  container: {
-    maxWidth: "500px",
-    margin: "0 auto",
-    padding: "20px",
-  },
-  card: {
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    padding: "20px",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-    backgroundColor: "white",
-  },
-  title: {
-    textAlign: "center",
-    marginBottom: "20px",
-    fontSize: "24px",
-    color: "#333",
-  },
-  formGroup: {
-    marginBottom: "15px",
-  },
-  label: {
-    display: "block",
-    marginBottom: "5px",
-    color: "#555",
-  },
-  input: {
-    width: "100%",
-    padding: "8px",
-    border: "1px solid #ddd",
-    borderRadius: "4px",
-    fontSize: "16px",
-  },
-  select: {
-    width: "100%",
-    padding: "8px",
-    border: "1px solid #ddd",
-    borderRadius: "4px",
-    fontSize: "16px",
-    backgroundColor: "white",
-  },
-  button: {
-    width: "100%",
-    padding: "10px",
-    backgroundColor: "#4CAF50",
-    color: "white",
-    border: "none",
-    borderRadius: "4px",
-    fontSize: "16px",
-    cursor: "pointer",
-  },
-  buttonDisabled: {
-    backgroundColor: "#cccccc",
-    cursor: "not-allowed",
-  },
-  error: {
-    color: "#ff0000",
-    marginBottom: "10px",
-    padding: "10px",
-    backgroundColor: "#ffe6e6",
-    borderRadius: "4px",
-  },
-  success: {
-    color: "#4CAF50",
-    marginBottom: "10px",
-    padding: "10px",
-    backgroundColor: "#e6ffe6",
-    borderRadius: "4px",
-  },
-  qrCode: {
-    textAlign: "center",
-    marginBottom: "20px",
-  },
-  qrCodeImage: {
-    maxWidth: "200px",
-    marginBottom: "10px",
-  },
 };
 
 const OfferingForm = () => {
@@ -166,26 +87,22 @@ const OfferingForm = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.title}>Church Offering</h2>
+    <div className="container">
+      <div className="card">
+        <h2 className="title">Church Offering</h2>
 
         {qrCode && (
-          <div style={styles.qrCode}>
-            <img
-              src={qrCode}
-              alt="Payment QR Code"
-              style={styles.qrCodeImage}
-            />
+          <div className="qrCode">
+            <img src={qrCode} alt="Payment QR Code" className="qrCodeImage" />
             <p>Scan to make payment</p>
           </div>
         )}
 
         <form onSubmit={handleSubmit}>
-          <div style={styles.formGroup}>
-            <label style={styles.label}>Payment Category</label>
+          <div className="formGroup">
+            <label className="label">Payment Category</label>
             <select
-              style={styles.select}
+              className="select"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
@@ -196,38 +113,35 @@ const OfferingForm = () => {
             </select>
           </div>
 
-          <div style={styles.formGroup}>
-            <label style={styles.label}>Amount (KSH)</label>
+          <div className="formGroup">
+            <label className="label">Amount (KSH)</label>
             <input
               type="number"
               min="1"
-              style={styles.input}
+              className="input"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="Enter amount"
             />
           </div>
 
-          <div style={styles.formGroup}>
-            <label style={styles.label}>M-Pesa Phone Number</label>
+          <div className="formGroup">
+            <label className="label">M-Pesa Phone Number</label>
             <input
               type="tel"
-              style={styles.input}
+              className="input"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               placeholder="254XXXXXXXXX"
             />
           </div>
 
-          {error && <div style={styles.error}>{error}</div>}
-          {success && <div style={styles.success}>{success}</div>}
+          {error && <div className="error">{error}</div>}
+          {success && <div className="success">{success}</div>}
 
           <button
             type="submit"
-            style={{
-              ...styles.button,
-              ...(loading ? styles.buttonDisabled : {}),
-            }}
+            className={`button ${loading ? "buttonDisabled" : ""}`}
             disabled={loading}
           >
             {loading ? "Processing..." : "Pay Now"}

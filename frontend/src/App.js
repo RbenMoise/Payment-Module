@@ -1,5 +1,5 @@
 import "./App.css";
-import QrCodeGenerator from "./components/generator/ganerator";
+// import QrCodeGenerator from "./components/generator/ganerator";
 import OfferingForm from "./components/offering/Offering";
 
 function App() {

@@ -1,0 +1,115 @@
+/* OfferingForm.css */
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff0000;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffe6e6;
+  border-radius: 4px;
+}
+
+.success {
+  color: #4caf50;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e6ffe6;
+  border-radius: 4px;
+}
+
+.qrCode {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.qrCodeImage {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+/* Additional payment methods */
+.paymentMethodsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paymentMethod {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  text-align: center;
+  min-width: 100px;
+}
+
+.paymentMethod:hover {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.paymentMethod.active {
+  background-color: #4caf50;
+  color: white;
+}
