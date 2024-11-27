@@ -107,10 +107,11 @@ const OfferingForm = () => {
             <label className="label">M-Pesa Phone Number</label>
             <input
               type="tel"
+              autoComplete="tel-national"
               className="input"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="254XXXXXXXXX"
+              placeholder="Phone Number"
             />
           </div>
 
